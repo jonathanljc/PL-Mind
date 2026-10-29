@@ -1,18 +1,14 @@
-# PL-MIND: Physics-Informed Liquid Neural Networks for UWB NLOS Identification
+# PL-MIND: Physics-Informed Liquid Neural Networks for Multichannel Identification of NLOS Dynamics in Indoor Positioning
 
-UWB ranging becomes inaccurate when the direct path between two devices is blocked (non-line-of-sight, NLOS), because the receiver measures a longer, reflected path. This project identifies NLOS conditions from the UWB channel impulse response (CIR), picks out clean single-bounce reflections and estimates the length of the reflected path. At its core is the PL-MIND encoder, a dual-circuit liquid neural network whose time constant adapts to the incoming signal.
+Code, dataset and trained models of the PL-MIND paper, published at IEEE PIMRC 2026 and available on [IEEE Xplore](https://ieeexplore.ieee.org/document/11711964).
 
-The repository contains the code, dataset and trained models of a final-year capstone project and of the paper based on it, published at IEEE PIMRC 2026.
-
-## Project Information
-
-| Item | Details |
+| Author | Affiliation |
 |---|---|
-| Module | CSC3101 Capstone Project |
-| Programme | BSc (Hons) Computing Science, University of Glasgow and Singapore Institute of Technology |
-| Student | Lim Jing Chuan Jonathan |
-| Supervisors | Assoc. Prof. Chee Kiat Seow (University of Glasgow), Asst. Prof. Nalam Venkata Abhishek (Singapore Institute of Technology) |
-| Paper | *PL-MIND: Physics-Informed Liquid Neural Networks for Multichannel Identification of NLOS Dynamics in Indoor Positioning*, IEEE PIMRC 2026 |
+| Jonathan Jing Chuan Lim | University of Glasgow |
+| Chee Kiat Seow | University of Glasgow |
+| Nalam Venkata Abhishek | Singapore Institute of Technology |
+
+UWB ranging becomes inaccurate when the direct path between two devices is blocked (non-line-of-sight, NLOS), because the receiver measures a longer, reflected path. PL-MIND identifies NLOS conditions from the UWB channel impulse response (CIR), picks out clean single-bounce reflections and estimates the length of the reflected path. At its core is a dual-circuit liquid neural network encoder whose time constant adapts to the incoming signal.
 
 ## Overview
 
@@ -40,8 +36,8 @@ ID is the test split of the training environments and OOD are environments never
 Python 3.10 to 3.13 is required (the notebooks were run with Python 3.13). A GPU is optional.
 
 ```bash
-git clone https://github.com/jonathanljc/csc3101-capstone-pl-mind.git
-cd csc3101-capstone-pl-mind
+git clone https://github.com/jonathanljc/pl-mind.git
+cd pl-mind
 python -m venv .venv
 .venv\Scripts\activate           # Windows (macOS / Linux: source .venv/bin/activate)
 pip install -r requirements.txt
@@ -55,12 +51,12 @@ The notebooks load files relative to their own folder, so keep the folder layout
 ## Repository Structure
 
 ```
-csc3101-capstone-pl-mind/
+pl-mind/
 ├── dataset/                CIR captures, combined datasets and calibration captures
 ├── setup/                  scripts that turn the DWM1001 serial log into CSV files
 ├── lnn/                    PL-MIND encoder, Stage 2, Stage 3 and the full pipeline
 ├── lstm/, cnn/, bert/      baselines
-├── novelty1_multichannel/  single-channel vs multi-channel analysis
+├── multichannel/           single-channel vs multi-channel analysis
 ├── docs/                   figures used in this README
 ├── eda.ipynb               calibration, multi-channel analysis and ground-truth labels
 ├── stage1_metrics_reference.ipynb     Stage 1 results of all encoders (Table I)

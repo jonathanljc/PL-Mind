@@ -38,7 +38,7 @@ ID scenarios are used for training, validation and the in-distribution test; OOD
 | `single_channel5_dataset.csv` | 600 | channel 5 only, 100 captures for each of 6 scenarios |
 | `multi_channel4_dataset.csv` | 600 | channels 1, 3, 4 and 7, 25 captures per channel for each of 6 scenarios (adds a `scenario` column) |
 
-The single- and multi-channel subsets share four scenarios; see `novelty1_multichannel/README.md`.
+The single- and multi-channel subsets share four scenarios; see `multichannel/README.md`.
 
 ## Columns
 
